@@ -13,4 +13,6 @@
     <color name="colorViolet">#7c267c</color>
     <color name="colorGrey">#808080</color>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="colorGold">#daa520</color>
+    <color name="colorSilver">#77cbcccb</color>
 </resources>
