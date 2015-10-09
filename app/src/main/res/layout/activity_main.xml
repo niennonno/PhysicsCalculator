@@ -5,8 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="16dp"
+    android:backgroundTint="@color/colorBackground"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:weightSum="1">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -28,8 +31,8 @@
 
                 <Button
                     android:id="@+id/fb_black"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorBlack"
                     android:text="@string/Black"
@@ -37,8 +40,8 @@
 
                 <Button
                     android:id="@+id/sb_black"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorBlack"
                     android:text="@string/Black"
@@ -46,8 +49,8 @@
 
                 <Button
                     android:id="@+id/tb_black"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorBlack"
                     android:text="@string/Black_Pow"
@@ -56,8 +59,8 @@
 
                 <Button
                     android:id="@+id/tol_brown"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorBrown"
                     android:text="1%"
@@ -72,8 +75,8 @@
 
                 <Button
                     android:id="@+id/fb_brown"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorBrown"
                     android:text="@string/Brown"
@@ -81,8 +84,8 @@
 
                 <Button
                     android:id="@+id/sb_brown"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorBrown"
                     android:text="@string/Brown"
@@ -90,8 +93,8 @@
 
                 <Button
                     android:id="@+id/tb_brown"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorBrown"
                     android:text="@string/Brown_Pow"
@@ -100,8 +103,8 @@
 
                 <Button
                     android:id="@+id/tol_red"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorRed"
                     android:text="2%"
@@ -116,8 +119,8 @@
 
                 <Button
                     android:id="@+id/fb_red"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorRed"
                     android:text="@string/Red"
@@ -125,8 +128,8 @@
 
                 <Button
                     android:id="@+id/sb_red"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorRed"
                     android:text="@string/Red"
@@ -134,8 +137,8 @@
 
                 <Button
                     android:id="@+id/tb_red"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorRed"
                     android:text="@string/Red_Pow"
@@ -144,8 +147,8 @@
 
                 <Button
                     android:id="@+id/tol_gold"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorGold"
                     android:text="5%" />
@@ -159,8 +162,8 @@
 
                 <Button
                     android:id="@+id/fb_orange"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorOrange"
                     android:text="@string/Orange"
@@ -168,8 +171,8 @@
 
                 <Button
                     android:id="@+id/sb_orange"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorOrange"
                     android:text="@string/Orange"
@@ -177,8 +180,8 @@
 
                 <Button
                     android:id="@+id/tb_orange"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorOrange"
                     android:text="@string/Orange_Pow"
@@ -187,8 +190,8 @@
 
                 <Button
                     android:id="@+id/tol_silver"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorSilver"
                     android:text="10%" />
@@ -202,35 +205,37 @@
 
                 <Button
                     android:id="@+id/fb_yellow"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorYellow"
                     android:text="@string/Yellow" />
 
                 <Button
                     android:id="@+id/sb_yellow"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorYellow"
                     android:text="@string/Yellow" />
 
                 <Button
                     android:id="@+id/tb_yellow"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorYellow"
                     android:text="@string/Yellow_Pow"
                     android:textAllCaps="false" />
 
                 <Button
+                    android:backgroundTint="@color/colorNone"
                     android:id="@+id/tol_none"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:text="None (20%)"
+                    android:textSize="10sp"
                     android:textAllCaps="false" />
             </TableRow>
 
@@ -242,8 +247,8 @@
 
                 <Button
                     android:id="@+id/fb_green"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorGreen"
                     android:text="@string/Green"
@@ -251,8 +256,8 @@
 
                 <Button
                     android:id="@+id/sb_green"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorGreen"
                     android:text="@string/Green"
@@ -260,8 +265,8 @@
 
                 <Button
                     android:id="@+id/tb_green"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorGreen"
                     android:text="@string/Green_Pow"
@@ -269,8 +274,8 @@
                     android:textColor="@color/colorWhite" />
 
                 <Button
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:visibility="invisible" />
             </TableRow>
@@ -283,8 +288,8 @@
 
                 <Button
                     android:id="@+id/fb_blue"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorBlue"
                     android:text="@string/Blue"
@@ -292,8 +297,8 @@
 
                 <Button
                     android:id="@+id/sb_blue"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorBlue"
                     android:text="@string/Blue"
@@ -301,8 +306,8 @@
 
                 <Button
                     android:id="@+id/tb_blue"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorBlue"
                     android:text="@string/Blue_Pow"
@@ -310,8 +315,8 @@
                     android:textColor="@color/colorWhite" />
 
                 <Button
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:visibility="invisible" />
             </TableRow>
@@ -324,8 +329,8 @@
 
                 <Button
                     android:id="@+id/fb_violet"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorViolet"
                     android:text="@string/Violet"
@@ -333,8 +338,8 @@
 
                 <Button
                     android:id="@+id/sb_violet"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorViolet"
                     android:text="@string/Violet"
@@ -342,8 +347,8 @@
 
                 <Button
                     android:id="@+id/tb_violet"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorViolet"
                     android:text="@string/Violet_Pow"
@@ -351,8 +356,8 @@
                     android:textColor="@color/colorWhite" />
 
                 <Button
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:visibility="invisible" />
             </TableRow>
@@ -365,8 +370,8 @@
 
                 <Button
                     android:id="@+id/fb_gray"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorGrey"
                     android:text="@string/Grey"
@@ -374,8 +379,8 @@
 
                 <Button
                     android:id="@+id/sb_gray"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorGrey"
                     android:text="@string/Grey"
@@ -383,8 +388,8 @@
 
                 <Button
                     android:id="@+id/tb_gray"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorGrey"
                     android:text="@string/Grey_Pow"
@@ -392,8 +397,8 @@
                     android:textColor="@color/colorWhite" />
 
                 <Button
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:visibility="invisible" />
             </TableRow>
@@ -406,54 +411,100 @@
 
                 <Button
                     android:id="@+id/fb_white"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorWhite"
                     android:text="@string/White" />
 
                 <Button
                     android:id="@+id/sb_white"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorWhite"
                     android:text="@string/White" />
 
                 <Button
                     android:id="@+id/tb_white"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorWhite"
                     android:text="@string/White_Pow"
                     android:textAllCaps="false" />
 
                 <Button
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:visibility="invisible" />
             </TableRow>
         </TableLayout>
     </RelativeLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
+        android:layout_height="match_parent">
         <TextView
+            android:gravity="right"
+            android:text="Lololol"
             android:id="@+id/value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="35sp" />
-        <!--android:text="Ω"-->
-
-
+            android:textSize="@dimen/text_size"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="21dp"
+            android:layout_marginEnd="21dp" />
         <TextView
+            android:gravity="right"
+            android:text="lololo"
             android:id="@+id/tolerance"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/value"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="25dp" />
+
+        <TextView
+            android:background="@color/colorNone"
+            android:layout_width="@dimen/band_width"
+            android:layout_height="@dimen/band_height"
+            android:id="@+id/firstBand"
+            android:layout_marginLeft="5dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+        <TextView
+            android:background="@color/colorNone"
+            android:layout_width="@dimen/band_width"
+            android:layout_height="@dimen/band_height"
+            android:id="@+id/secondBand"
+            android:layout_marginLeft="2dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/firstBand"
+            android:layout_toEndOf="@+id/firstBand" />
+        <TextView
+            android:background="@color/colorNone"
+            android:layout_width="@dimen/band_width"
+            android:layout_height="@dimen/band_height"
+            android:id="@+id/thirdBand"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="2dp"
+            android:layout_toRightOf="@+id/secondBand"
+            android:layout_toEndOf="@+id/secondBand" />
+        <TextView
+            android:background="@color/colorNone"
+            android:layout_width="@dimen/band_width"
+            android:layout_height="@dimen/band_height"
+            android:id="@+id/fourthBand"
+            android:layout_marginLeft="19dp"
+            android:layout_marginStart="19dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/thirdBand"
+            android:layout_toEndOf="@+id/thirdBand" />
+    </RelativeLayout>
 </LinearLayout>

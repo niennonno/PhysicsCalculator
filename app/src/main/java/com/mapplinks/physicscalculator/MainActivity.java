@@ -2,11 +2,17 @@ package com.mapplinks.physicscalculator;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.TypefaceSpan;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button frBlack, srBlack, trBlack,
@@ -27,10 +33,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     int btnCount = 0;
     double value, first, second, multiplier, tolerance, tolVal;
 
+    TextView firstBand, secondBand, thirdBand, fourthBand;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        FontChangeCrawler fontChanger = new FontChangeCrawler(getAssets(), "gotham_light.otf");
+        fontChanger.replaceFonts((ViewGroup) this.findViewById(android.R.id.content));
+
+        SpannableString s = new SpannableString("Resistance Finder");
+        s.setSpan(new TypefaceSpan("gotham_bold.otf"), 0, s.length(),
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        getSupportActionBar().setTitle(s);
 
         resValue = (TextView) findViewById(R.id.value);
         tolValue = (TextView) findViewById(R.id.tolerance);
@@ -116,6 +132,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tolNone = (Button) findViewById(R.id.tol_none);
         tolNone.setOnClickListener(this);
 
+        firstBand = (TextView) findViewById(R.id.firstBand);
+        secondBand = (TextView) findViewById(R.id.secondBand);
+        thirdBand = (TextView) findViewById(R.id.thirdBand);
+        fourthBand = (TextView) findViewById(R.id.fourthBand);
     }
 
     @Override
@@ -125,178 +145,234 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.fb_black:
                 ++btnCount;
                 first = 0;
+                firstBand.setBackgroundColor(getResources().getColor(R.color.colorBlack));
                 calculate();
                 break;
             case R.id.sb_black:
                 ++btnCount;
                 second = 0;
                 calculate();
+                secondBand.setBackgroundColor(getResources().getColor(R.color.colorBlack));
                 break;
             case R.id.tb_black:
                 ++btnCount;
                 multiplier = 0;
+                suffix = "";
                 calculate();
+                thirdBand.setBackgroundColor(getResources().getColor(R.color.colorBlack));
                 break;
+
             case R.id.fb_brown:
                 ++btnCount;
                 first = 1;
                 calculate();
+                firstBand.setBackgroundColor(getResources().getColor(R.color.colorBrown));
                 break;
             case R.id.sb_brown:
                 ++btnCount;
                 second = 1;
                 calculate();
+                secondBand.setBackgroundColor(getResources().getColor(R.color.colorBrown));
                 break;
             case R.id.tb_brown:
                 ++btnCount;
                 multiplier = 1;
+                suffix = "";
                 calculate();
+                thirdBand.setBackgroundColor(getResources().getColor(R.color.colorBrown));
                 break;
+
             case R.id.fb_red:
                 ++btnCount;
                 first = 2;
                 calculate();
+                firstBand.setBackgroundColor(getResources().getColor(R.color.colorRed));
                 break;
             case R.id.sb_red:
                 ++btnCount;
                 second = 2;
                 calculate();
+                secondBand.setBackgroundColor(getResources().getColor(R.color.colorRed));
                 break;
             case R.id.tb_red:
                 ++btnCount;
                 multiplier = 2;
+                suffix = "";
                 calculate();
+                thirdBand.setBackgroundColor(getResources().getColor(R.color.colorRed));
                 break;
+
             case R.id.fb_orange:
                 ++btnCount;
                 first = 3;
                 calculate();
+                firstBand.setBackgroundColor(getResources().getColor(R.color.colorOrange));
                 break;
             case R.id.sb_orange:
                 ++btnCount;
                 second = 3;
                 calculate();
+                secondBand.setBackgroundColor(getResources().getColor(R.color.colorOrange));
                 break;
             case R.id.tb_orange:
                 ++btnCount;
-                multiplier = 3;
+                suffix="K";
+                multiplier=3;
+                multiplier-=3;
                 calculate();
+                thirdBand.setBackgroundColor(getResources().getColor(R.color.colorOrange));
                 break;
+
             case R.id.fb_yellow:
                 ++btnCount;
                 first = 4;
                 calculate();
+                firstBand.setBackgroundColor(getResources().getColor(R.color.colorYellow));
                 break;
             case R.id.sb_yellow:
                 ++btnCount;
                 second = 4;
                 calculate();
+                secondBand.setBackgroundColor(getResources().getColor(R.color.colorYellow));
                 break;
             case R.id.tb_yellow:
                 ++btnCount;
-                multiplier = 4  ;
+                suffix="K";
+                multiplier = 4;
+                multiplier-=3;
                 calculate();
+                thirdBand.setBackgroundColor(getResources().getColor(R.color.colorYellow));
                 break;
+
             case R.id.fb_green:
                 ++btnCount;
                 first = 5;
                 calculate();
+                firstBand.setBackgroundColor(getResources().getColor(R.color.colorGreen));
                 break;
             case R.id.sb_green:
                 ++btnCount;
                 second = 5;
                 calculate();
+                secondBand.setBackgroundColor(getResources().getColor(R.color.colorGreen));
                 break;
             case R.id.tb_green:
                 ++btnCount;
                 multiplier = 5;
+                suffix ="M";
+                multiplier-=6;
                 calculate();
+                thirdBand.setBackgroundColor(getResources().getColor(R.color.colorGreen));
                 break;
+
             case R.id.fb_blue:
                 ++btnCount;
                 first = 6;
                 calculate();
+                firstBand.setBackgroundColor(getResources().getColor(R.color.colorBlue));
                 break;
             case R.id.sb_blue:
                 ++btnCount;
                 second = 6;
                 calculate();
+                secondBand.setBackgroundColor(getResources().getColor(R.color.colorBlue));
                 break;
             case R.id.tb_blue:
                 ++btnCount;
                 multiplier = 6;
+                suffix ="M";
+                multiplier-=6;
                 calculate();
+                thirdBand.setBackgroundColor(getResources().getColor(R.color.colorBlue));
                 break;
+
             case R.id.fb_violet:
                 ++btnCount;
                 first = 7;
                 calculate();
+                firstBand.setBackgroundColor(getResources().getColor(R.color.colorViolet));
                 break;
             case R.id.sb_violet:
                 ++btnCount;
                 second = 7;
                 calculate();
+                secondBand.setBackgroundColor(getResources().getColor(R.color.colorViolet));
                 break;
             case R.id.tb_violet:
                 ++btnCount;
                 multiplier = 7;
+                suffix ="M";
+                multiplier-=6;
                 calculate();
+                thirdBand.setBackgroundColor(getResources().getColor(R.color.colorViolet));
                 break;
+
             case R.id.fb_gray:
                 ++btnCount;
                 first = 8;
                 calculate();
+                firstBand.setBackgroundColor(getResources().getColor(R.color.colorGrey));
                 break;
             case R.id.sb_gray:
                 ++btnCount;
                 second = 8;
                 calculate();
+                secondBand.setBackgroundColor(getResources().getColor(R.color.colorGrey));
                 break;
             case R.id.tb_gray:
                 ++btnCount;
                 multiplier = 8;
+                suffix="G";
+                multiplier-=9;
                 calculate();
+                thirdBand.setBackgroundColor(getResources().getColor(R.color.colorGrey));
                 break;
+
             case R.id.fb_white:
                 ++btnCount;
                 first = 9;
                 calculate();
+                firstBand.setBackgroundColor(getResources().getColor(R.color.colorWhite));
                 break;
             case R.id.sb_white:
                 ++btnCount;
                 second = 9;
                 calculate();
+                secondBand.setBackgroundColor(getResources().getColor(R.color.colorWhite));
                 break;
             case R.id.tb_white:
                 ++btnCount;
                 multiplier = 9;
+                suffix="G";
+                multiplier-=9;
                 calculate();
-                break;
-            case R.id.tol_brown:
-                ++btnCount;
-                tolerance = 0.01;
-                calculate();
-                break;
-            case R.id.tol_red:
-                ++btnCount;
-                tolerance = 0.02;
-                calculate();
-                break;
-            case R.id.tol_gold:
-                ++btnCount;
-                tolerance = 0.05;
-                calculate();
+                thirdBand.setBackgroundColor(getResources().getColor(R.color.colorWhite));
                 break;
 
+            case R.id.tol_brown:
+                tolerance = 0.01;
+                calculateTolerance();
+                fourthBand.setBackgroundColor(getResources().getColor(R.color.colorBrown));
+                break;
+            case R.id.tol_red:
+                tolerance = 0.02;
+                calculateTolerance();
+                fourthBand.setBackgroundColor(getResources().getColor(R.color.colorRed));
+                break;
+            case R.id.tol_gold:
+                tolerance = 0.05;
+                calculateTolerance();
+                fourthBand.setBackgroundColor(getResources().getColor(R.color.colorGold));
+                break;
             case R.id.tol_silver:
-                ++btnCount;
                 tolerance = 0.1;
-                calculate();
+                calculateTolerance();
+                fourthBand.setBackgroundColor(getResources().getColor(R.color.colorSilver));
                 break;
             case R.id.tol_none:
-                ++btnCount;
                 tolerance = 0.2;
-                calculate();
+                calculateTolerance();
+                fourthBand.setBackgroundColor(getResources().getColor(R.color.colorNone));
                 break;
             default:
                 break;
@@ -305,24 +381,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     void calculate() {
         if (btnCount >= 3) {
-            if(multiplier>3 && multiplier<6){
-                suffix="K";
-                multiplier-=3;
-            }else if (multiplier>5){
-                suffix ="M";
-                multiplier-=6;
-            }else if (multiplier<3){
-                suffix="";
-            }
             value = (first * 10) + second;
             value *= Math.pow(10, multiplier);
-            resValue.setText("R = " + value + " " + suffix + "Ω");
-            tolVal = value * tolerance;
-            tolValue.setText("±" + tolVal + " " + suffix + "Ω");
-
+            double formattedNumber = Double.parseDouble(new DecimalFormat("#.##").format(value));
+            resValue.setText(formattedNumber + " " + suffix + "Ω");
+            calculateTolerance();
         }
     }
 
+    void calculateTolerance(){
+        if(btnCount>=3){
+            tolVal = value * tolerance;
+            double formattedNumber = Double.parseDouble(new DecimalFormat("#.##").format(tolVal));
+            tolValue.setText("±" + formattedNumber + " " + suffix + "Ω");
+        }
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
