@@ -491,7 +491,7 @@
             android:layout_width="5dp"
             android:layout_height="42dp"
             android:id="@+id/secondBand"
-            android:layout_marginLeft="2dp"
+            android:layout_marginLeft="5dp"
             android:layout_centerVertical="true"
             android:layout_alignTop="@+id/firstBand"
             android:layout_toRightOf="@+id/firstBand"
@@ -501,7 +501,7 @@
                android:layout_width="5dp"
                android:layout_height="42dp"
                android:id="@+id/thirdBand"
-               android:layout_marginLeft="2dp"
+               android:layout_marginLeft="5dp"
                android:layout_centerVertical="true"
                android:layout_alignTop="@+id/secondBand"
                android:layout_toRightOf="@+id/secondBand"
@@ -516,6 +516,43 @@
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="0"
+               android:id="@+id/first_band_value"
+               android:layout_below="@+id/firstBand"
+               android:layout_alignRight="@+id/firstBand"
+               android:layout_alignEnd="@+id/firstBand"
+               android:textSize="6sp"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="0"
+               android:id="@+id/second_band_value"
+               android:layout_below="@+id/secondBand"
+               android:layout_alignRight="@+id/secondBand"
+               android:layout_alignEnd="@+id/secondBand"
+               android:textSize="6sp"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="10^0"
+               android:id="@+id/third_band_value"
+               android:textSize="6sp"
+               android:layout_alignTop="@+id/second_band_value"
+               android:layout_alignLeft="@+id/thirdBand"
+               android:layout_alignStart="@+id/thirdBand" />
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="0%"
+               android:id="@+id/fourth_band_value"
+               android:textSize="6sp"
+               android:layout_alignTop="@+id/third_band_value"
+               android:layout_alignLeft="@+id/fourthBand"
+               android:layout_alignStart="@+id/fourthBand" />
        </RelativeLayout>
     </RelativeLayout>
 </LinearLayout>

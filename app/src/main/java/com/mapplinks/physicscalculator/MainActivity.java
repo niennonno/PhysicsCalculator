@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     int btnCount = 0;
     double value, first, second, multiplier, tolerance, tolVal;
 
-    TextView firstBand, secondBand, thirdBand, fourthBand;
+    TextView firstBand, secondBand, thirdBand, fourthBand, firstBandValue, secondBandValue, thirdBandValue, fourthBandValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -136,6 +136,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         secondBand = (TextView) findViewById(R.id.secondBand);
         thirdBand = (TextView) findViewById(R.id.thirdBand);
         fourthBand = (TextView) findViewById(R.id.fourthBand);
+
+        firstBandValue = (TextView) findViewById(R.id.first_band_value);
+        secondBandValue = (TextView) findViewById(R.id.second_band_value);
+        thirdBandValue = (TextView) findViewById(R.id.third_band_value);
+        fourthBandValue = (TextView) findViewById(R.id.fourth_band_value);
     }
 
     @Override
@@ -216,9 +221,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.tb_orange:
                 ++btnCount;
-                suffix="K";
-                multiplier=3;
-                multiplier-=3;
+                suffix = "K";
+                multiplier = 3;
+                multiplier -= 3;
                 calculate();
                 thirdBand.setBackgroundColor(getResources().getColor(R.color.colorOrange));
                 break;
@@ -237,9 +242,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.tb_yellow:
                 ++btnCount;
-                suffix="K";
+                suffix = "K";
                 multiplier = 4;
-                multiplier-=3;
+                multiplier -= 3;
                 calculate();
                 thirdBand.setBackgroundColor(getResources().getColor(R.color.colorYellow));
                 break;
@@ -259,8 +264,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.tb_green:
                 ++btnCount;
                 multiplier = 5;
-                suffix ="M";
-                multiplier-=6;
+                suffix = "M";
+                multiplier -= 6;
                 calculate();
                 thirdBand.setBackgroundColor(getResources().getColor(R.color.colorGreen));
                 break;
@@ -280,8 +285,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.tb_blue:
                 ++btnCount;
                 multiplier = 6;
-                suffix ="M";
-                multiplier-=6;
+                suffix = "M";
+                multiplier -= 6;
                 calculate();
                 thirdBand.setBackgroundColor(getResources().getColor(R.color.colorBlue));
                 break;
@@ -301,8 +306,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.tb_violet:
                 ++btnCount;
                 multiplier = 7;
-                suffix ="M";
-                multiplier-=6;
+                suffix = "M";
+                multiplier -= 6;
                 calculate();
                 thirdBand.setBackgroundColor(getResources().getColor(R.color.colorViolet));
                 break;
@@ -322,8 +327,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.tb_gray:
                 ++btnCount;
                 multiplier = 8;
-                suffix="G";
-                multiplier-=9;
+                suffix = "G";
+                multiplier -= 9;
                 calculate();
                 thirdBand.setBackgroundColor(getResources().getColor(R.color.colorGrey));
                 break;
@@ -343,34 +348,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.tb_white:
                 ++btnCount;
                 multiplier = 9;
-                suffix="G";
-                multiplier-=9;
+                suffix = "G";
+                multiplier -= 9;
                 calculate();
                 thirdBand.setBackgroundColor(getResources().getColor(R.color.colorWhite));
                 break;
 
             case R.id.tol_brown:
-                tolerance = 0.01;
+                tolerance = 1;
                 calculateTolerance();
                 fourthBand.setBackgroundColor(getResources().getColor(R.color.colorBrown));
                 break;
             case R.id.tol_red:
-                tolerance = 0.02;
+                tolerance = 2;
                 calculateTolerance();
                 fourthBand.setBackgroundColor(getResources().getColor(R.color.colorRed));
                 break;
             case R.id.tol_gold:
-                tolerance = 0.05;
+                tolerance = 5;
                 calculateTolerance();
                 fourthBand.setBackgroundColor(getResources().getColor(R.color.colorGold));
                 break;
             case R.id.tol_silver:
-                tolerance = 0.1;
+                tolerance = 10;
                 calculateTolerance();
                 fourthBand.setBackgroundColor(getResources().getColor(R.color.colorSilver));
                 break;
             case R.id.tol_none:
-                tolerance = 0.2;
+                tolerance = 20;
                 calculateTolerance();
                 fourthBand.setBackgroundColor(getResources().getColor(R.color.colorNone));
                 break;
@@ -380,6 +385,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     void calculate() {
+        DecimalFormat precision = new DecimalFormat("0");
+        firstBandValue.setText(precision.format(first));
+        secondBandValue.setText(precision.format(second));
+        if (suffix == "") {
+            thirdBandValue.setText("10^" + precision.format(multiplier));
+        }else if (suffix=="K"){
+            thirdBandValue.setText("10^" + precision.format(multiplier+3));
+        }else if (suffix=="M"){
+            thirdBandValue.setText("10^" + precision.format(multiplier+6));
+        }else if(suffix=="G"){
+            thirdBandValue.setText("10^" + precision.format(multiplier+9));
+        }
+
         if (btnCount >= 3) {
             value = (first * 10) + second;
             value *= Math.pow(10, multiplier);
@@ -389,13 +407,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    void calculateTolerance(){
-        if(btnCount>=3){
-            tolVal = value * tolerance;
+    void calculateTolerance() {
+        fourthBandValue.setText(tolerance+"%");
+        if (btnCount >= 3) {
+            tolVal = value * tolerance / 100;
             double formattedNumber = Double.parseDouble(new DecimalFormat("#.##").format(tolVal));
             tolValue.setText("±" + formattedNumber + " " + suffix + "Ω");
         }
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
