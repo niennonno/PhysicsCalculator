@@ -188,7 +188,7 @@
                     android:textAllCaps="false"
                     android:textColor="@color/colorWhite" />
 
-                <Button
+                C<Button
                     android:id="@+id/tol_silver"
                     android:layout_width="@dimen/btn_size"
                     android:layout_height="@dimen/btn_size"
@@ -229,13 +229,12 @@
                     android:textAllCaps="false" />
 
                 <Button
-                    android:backgroundTint="@color/colorNone"
                     android:id="@+id/tol_none"
                     android:layout_width="@dimen/btn_size"
                     android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
-                    android:text="None (20%)"
-                    android:textSize="10sp"
+                    android:backgroundTint="@color/colorNone"
+                    android:text="None"
                     android:textAllCaps="false" />
             </TableRow>
 
@@ -448,7 +447,6 @@
         android:layout_height="match_parent">
         <TextView
             android:gravity="right"
-            android:text="Lololol"
             android:id="@+id/value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -460,7 +458,6 @@
             android:layout_marginEnd="21dp" />
         <TextView
             android:gravity="right"
-            android:text="lololo"
             android:id="@+id/tolerance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -469,42 +466,56 @@
             android:layout_alignParentRight="true"
             android:layout_marginRight="25dp" />
 
+       <RelativeLayout
+           android:id="@+id/resistorLayout"
+           android:background="@drawable/background"
+           android:layout_width="120dp"
+           android:layout_height="100dp"
+           android:layout_centerVertical="true"
+           android:layout_alignParentLeft="true"
+           android:layout_alignParentStart="true"
+           android:layout_marginRight="174dp"
+           android:layout_marginEnd="174dp">
         <TextView
             android:background="@color/colorNone"
-            android:layout_width="@dimen/band_width"
-            android:layout_height="@dimen/band_height"
+            android:layout_width="5dp"
+            android:layout_height="42dp"
             android:id="@+id/firstBand"
-            android:layout_marginLeft="5dp"
-            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="3dp"
+            android:layout_marginStart="30dp" />
         <TextView
             android:background="@color/colorNone"
-            android:layout_width="@dimen/band_width"
-            android:layout_height="@dimen/band_height"
+            android:layout_width="5dp"
+            android:layout_height="42dp"
             android:id="@+id/secondBand"
             android:layout_marginLeft="2dp"
-            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:layout_alignTop="@+id/firstBand"
             android:layout_toRightOf="@+id/firstBand"
             android:layout_toEndOf="@+id/firstBand" />
-        <TextView
+           <TextView
+               android:background="@color/colorNone"
+               android:layout_width="5dp"
+               android:layout_height="42dp"
+               android:id="@+id/thirdBand"
+               android:layout_marginLeft="2dp"
+               android:layout_centerVertical="true"
+               android:layout_alignTop="@+id/secondBand"
+               android:layout_toRightOf="@+id/secondBand"
+               android:layout_toEndOf="@+id/secondBand" />
+           <TextView
             android:background="@color/colorNone"
-            android:layout_width="@dimen/band_width"
-            android:layout_height="@dimen/band_height"
-            android:id="@+id/thirdBand"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="2dp"
-            android:layout_toRightOf="@+id/secondBand"
-            android:layout_toEndOf="@+id/secondBand" />
-        <TextView
-            android:background="@color/colorNone"
-            android:layout_width="@dimen/band_width"
-            android:layout_height="@dimen/band_height"
+            android:layout_width="5dp"
+            android:layout_height="42dp"
             android:id="@+id/fourthBand"
-            android:layout_marginLeft="19dp"
-            android:layout_marginStart="19dp"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/thirdBand"
-            android:layout_toEndOf="@+id/thirdBand" />
+            android:layout_marginRight="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+       </RelativeLayout>
     </RelativeLayout>
 </LinearLayout>
