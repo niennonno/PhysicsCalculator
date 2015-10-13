@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/colorBackground"
     android:orientation="vertical"
     android:padding="16dp"
-    android:backgroundTint="@color/colorBackground"
+    android:weightSum="1"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity"
-    android:weightSum="1">
+    tools:context=".MainActivity">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -18,10 +18,10 @@
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="0dp"
             android:layout_marginLeft="0dp"
             android:layout_marginRight="0dp"
-            android:layout_marginTop="0dp">
+            android:layout_marginTop="0dp"
+            android:padding="0dp">
 
             <TableRow
                 android:layout_width="match_parent"
@@ -49,6 +49,16 @@
 
                 <Button
                     android:id="@+id/tb_black"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorBlack"
+                    android:text="@string/Black"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite" />
+
+                <Button
+                    android:id="@+id/mul_black"
                     android:layout_width="@dimen/btn_size"
                     android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
@@ -97,6 +107,16 @@
                     android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorBrown"
+                    android:text="@string/Brown"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite" />
+
+                <Button
+                    android:id="@+id/mul_brown"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorBrown"
                     android:text="@string/Brown_Pow"
                     android:textAllCaps="false"
                     android:textColor="@color/colorWhite" />
@@ -137,6 +157,16 @@
 
                 <Button
                     android:id="@+id/tb_red"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorRed"
+                    android:text="@string/Red"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite" />
+
+                <Button
+                    android:id="@+id/mul_red"
                     android:layout_width="@dimen/btn_size"
                     android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
@@ -184,17 +214,27 @@
                     android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorOrange"
+                    android:text="@string/Orange"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite" />
+
+                <Button
+                    android:id="@+id/mul_orange"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorOrange"
                     android:text="@string/Orange_Pow"
                     android:textAllCaps="false"
                     android:textColor="@color/colorWhite" />
 
-                C<Button
-                android:id="@+id/tol_silver"
-                android:layout_width="@dimen/btn_size"
-                android:layout_height="@dimen/btn_size"
-                android:layout_weight="1"
-                android:backgroundTint="@color/colorSilver"
-                android:text="10%" />
+                <Button
+                    android:id="@+id/tol_silver"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorSilver"
+                    android:text="10%" />
             </TableRow>
 
             <TableRow
@@ -221,6 +261,15 @@
 
                 <Button
                     android:id="@+id/tb_yellow"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorYellow"
+                    android:text="@string/Yellow"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/mul_yellow"
                     android:layout_width="@dimen/btn_size"
                     android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
@@ -268,6 +317,16 @@
                     android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorGreen"
+                    android:text="@string/Green"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite" />
+
+                <Button
+                    android:id="@+id/mul_green"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorGreen"
                     android:text="@string/Green_Pow"
                     android:textAllCaps="false"
                     android:textColor="@color/colorWhite" />
@@ -305,6 +364,16 @@
 
                 <Button
                     android:id="@+id/tb_blue"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorBlue"
+                    android:text="@string/Blue"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite" />
+
+                <Button
+                    android:id="@+id/mul_blue"
                     android:layout_width="@dimen/btn_size"
                     android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
@@ -350,6 +419,16 @@
                     android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorViolet"
+                    android:text="@string/Violet"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite" />
+
+                <Button
+                    android:id="@+id/mul_violet"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorViolet"
                     android:text="@string/Violet_Pow"
                     android:textAllCaps="false"
                     android:textColor="@color/colorWhite" />
@@ -387,6 +466,16 @@
 
                 <Button
                     android:id="@+id/tb_gray"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorGrey"
+                    android:text="@string/Grey"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite" />
+
+                <Button
+                    android:id="@+id/mul_gray"
                     android:layout_width="@dimen/btn_size"
                     android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
@@ -430,6 +519,15 @@
                     android:layout_height="@dimen/btn_size"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorWhite"
+                    android:text="@string/White"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/mul_white"
+                    android:layout_width="@dimen/btn_size"
+                    android:layout_height="@dimen/btn_size"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorWhite"
                     android:text="@string/White_Pow"
                     android:textAllCaps="false" />
 
@@ -445,114 +543,144 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <TextView
-            android:gravity="right"
             android:id="@+id/value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/text_size"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="21dp"
             android:layout_marginRight="21dp"
-            android:layout_marginEnd="21dp" />
-        <TextView
             android:gravity="right"
+            android:textSize="@dimen/text_size" />
+
+        <TextView
             android:id="@+id/tolerance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_below="@+id/value"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="25dp" />
+            android:layout_below="@+id/value"
+            android:layout_marginRight="25dp"
+            android:gravity="right" />
 
         <RelativeLayout
             android:id="@+id/resistorLayout"
-            android:background="@drawable/background"
             android:layout_width="130dp"
             android:layout_height="100dp"
-            android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="174dp"
             android:layout_marginRight="174dp"
-            android:layout_marginEnd="174dp">
-            <TextView
-                android:background="@color/colorNone"
-                android:layout_width="5dp"
-                android:layout_height="42dp"
-                android:id="@+id/firstBand"
-                android:layout_centerVertical="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginLeft="3dp"
-                android:layout_marginStart="32dp" />
-            <TextView
-                android:background="@color/colorNone"
-                android:layout_width="5dp"
-                android:layout_height="42dp"
-                android:id="@+id/secondBand"
-                android:layout_marginLeft="5dp"
-                android:layout_centerVertical="true"
-                android:layout_alignTop="@+id/firstBand"
-                android:layout_toRightOf="@+id/firstBand"
-                android:layout_toEndOf="@+id/firstBand" />
-            <TextView
-                android:background="@color/colorNone"
-                android:layout_width="5dp"
-                android:layout_height="42dp"
-                android:id="@+id/fourthBand"
-                android:layout_marginLeft="5dp"
-                android:layout_centerVertical="true"
-                android:layout_alignTop="@+id/secondBand"
-                android:layout_toRightOf="@+id/secondBand"
-                android:layout_toEndOf="@+id/secondBand" />
-            <TextView
-                android:background="@color/colorNone"
-                android:layout_width="5dp"
-                android:layout_height="42dp"
-                android:id="@+id/fifthBand"
-                android:layout_marginRight="30dp"
-                android:layout_marginEnd="30dp"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+            android:background="@drawable/background">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0"
+                android:id="@+id/firstBand"
+                android:layout_width="5dp"
+                android:layout_height="42dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="3dp"
+                android:layout_marginStart="32dp"
+                android:background="@color/colorNone" />
+
+            <TextView
+                android:id="@+id/secondBand"
+                android:layout_width="5dp"
+                android:layout_height="42dp"
+                android:layout_alignTop="@+id/firstBand"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toEndOf="@+id/firstBand"
+                android:layout_toRightOf="@+id/firstBand"
+                android:background="@color/colorNone" />
+
+            <TextView
+                android:id="@+id/thirdBand"
+                android:layout_width="5dp"
+                android:layout_height="42dp"
+                android:layout_alignTop="@+id/secondBand"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toEndOf="@+id/secondBand"
+                android:layout_toRightOf="@+id/secondBand"
+                android:background="@color/colorNone" />
+
+            <TextView
+                android:id="@+id/fourthBand"
+                android:layout_width="5dp"
+                android:layout_height="42dp"
+                android:layout_alignTop="@+id/secondBand"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toEndOf="@+id/thirdBand"
+                android:layout_toRightOf="@+id/thirdBand"
+                android:background="@color/colorNone" />
+
+            <TextView
+                android:id="@+id/fifthBand"
+                android:layout_width="5dp"
+                android:layout_height="42dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@color/colorNone" />
+
+            <TextView
                 android:id="@+id/first_band_value"
-                android:layout_below="@+id/firstBand"
-                android:layout_alignRight="@+id/firstBand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignEnd="@+id/firstBand"
-                android:textSize="6sp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/firstBand"
+                android:layout_below="@+id/firstBand"
                 android:text="0"
+                android:textSize="6sp" />
+
+            <TextView
                 android:id="@+id/second_band_value"
-                android:layout_below="@+id/secondBand"
-                android:layout_alignRight="@+id/secondBand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignEnd="@+id/secondBand"
-                android:textSize="6sp"/>
+                android:layout_alignRight="@+id/secondBand"
+                android:layout_below="@+id/secondBand"
+                android:text="0"
+                android:textSize="6sp" />
+
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="10^0"
+            android:id="@+id/third_band_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/thirdBand"
+            android:layout_alignRight="@+id/thirdBand"
+            android:layout_below="@+id/thirdBand"
+            android:text="0"
+            android:textSize="6sp" />
+
+            <TextView
                 android:id="@+id/fourth_band_value"
-                android:textSize="6sp"
-                android:layout_alignTop="@+id/second_band_value"
-                android:layout_alignLeft="@+id/fourthBand"
-                android:layout_alignStart="@+id/fourthBand" />
-            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0%"
+                android:layout_alignLeft="@+id/fourthBand"
+                android:layout_alignStart="@+id/fourthBand"
+                android:layout_alignTop="@+id/second_band_value"
+                android:text="10^0"
+                android:textSize="6sp" />
+
+            <TextView
                 android:id="@+id/fifth_band_value"
-                android:textSize="6sp"
-                android:layout_alignTop="@+id/fourth_band_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/fifthBand"
-                android:layout_alignStart="@+id/fifthBand" />
+                android:layout_alignStart="@+id/fifthBand"
+                android:layout_alignTop="@+id/fourth_band_value"
+                android:text="0%"
+                android:textSize="6sp" />
         </RelativeLayout>
     </RelativeLayout>
 </LinearLayout>

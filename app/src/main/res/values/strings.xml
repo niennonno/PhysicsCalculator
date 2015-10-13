@@ -21,5 +21,6 @@
     <string name="Violet_Pow">x10^7</string>
     <string name="Grey_Pow">x10^8</string>
     <string name="White_Pow">x10^9</string>
+    <string name="five_band">5 Band</string>
 
 </resources>

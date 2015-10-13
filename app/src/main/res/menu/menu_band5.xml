@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity">
     <item
-        android:id="@+id/five_band"
+        android:id="@+id/four_band"
         android:orderInCategory="1"
         app:showAsAction="ifRoom"
         android:title="@string/five_band"
