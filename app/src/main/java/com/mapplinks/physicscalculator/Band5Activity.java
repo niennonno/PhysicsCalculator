@@ -1,5 +1,6 @@
 package com.mapplinks.physicscalculator;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Spannable;
@@ -11,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.mixpanel.android.mpmetrics.MixpanelAPI;
 
 import java.text.DecimalFormat;
 
@@ -43,13 +46,18 @@ public class Band5Activity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_band5);
 
+        String projectToken = "0009db2010b6dc8e95ab2649e124fee1"; // e.g.: "1ef7e30d2a58d27f4b90c42e31d6d7ad"
+        MixpanelAPI mixpanel = MixpanelAPI.getInstance(this, projectToken);
+
         FontChangeCrawler fontChanger = new FontChangeCrawler(getAssets(), "gotham_light.otf");
         fontChanger.replaceFonts((ViewGroup) this.findViewById(android.R.id.content));
 
-        SpannableString s = new SpannableString("Resistance Finder");
+        SpannableString s = new SpannableString("Resistance Calculator");
         s.setSpan(new TypefaceSpan("gotham_bold.otf"), 0, s.length(),
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         getSupportActionBar().setTitle(s);
+
+        mixpanel.track("5 Band Opened");
 
         resValue = (TextView) findViewById(R.id.value);
         tolValue = (TextView) findViewById(R.id.tolerance);
@@ -228,7 +236,8 @@ public class Band5Activity extends AppCompatActivity implements View.OnClickList
             case R.id.mul_red:
                 ++btnCount;
                 multiplier = 2;
-                suffix = "";
+                suffix = "K";
+                multiplier-=3;
                 calculate();
                 fourthBand.setBackgroundColor(getResources().getColor(R.color.colorRed));
                 break;
@@ -332,8 +341,8 @@ public class Band5Activity extends AppCompatActivity implements View.OnClickList
             case R.id.mul_violet:
                 ++btnCount;
                 multiplier = 7;
-                suffix = "M";
-                multiplier -= 6;
+                suffix = "G";
+                multiplier -= 9;
                 calculate();
                 fourthBand.setBackgroundColor(getResources().getColor(R.color.colorViolet));
                 break;
@@ -522,6 +531,9 @@ public class Band5Activity extends AppCompatActivity implements View.OnClickList
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        }else if(id==R.id.four_band){
+            Intent i = new Intent(Band5Activity.this,MainActivity.class);
+            startActivity(i);
         }
         return super.onOptionsItemSelected(item);
     }

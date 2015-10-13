@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.mixpanel.android.mpmetrics.MixpanelAPI;
+
 import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -41,13 +43,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        String projectToken = "0009db2010b6dc8e95ab2649e124fee1"; // e.g.: "1ef7e30d2a58d27f4b90c42e31d6d7ad"
+        MixpanelAPI mixpanel = MixpanelAPI.getInstance(this, projectToken);
+
         FontChangeCrawler fontChanger = new FontChangeCrawler(getAssets(), "gotham_light.otf");
         fontChanger.replaceFonts((ViewGroup) this.findViewById(android.R.id.content));
 
-        SpannableString s = new SpannableString("Resistance Finder");
+        SpannableString s = new SpannableString("Resistance Calculator");
         s.setSpan(new TypefaceSpan("gotham_bold.otf"), 0, s.length(),
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         getSupportActionBar().setTitle(s);
+
+            mixpanel.track("4 Band Opened");
 
         resValue = (TextView) findViewById(R.id.value);
         tolValue = (TextView) findViewById(R.id.tolerance);
