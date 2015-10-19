@@ -567,7 +567,6 @@
             android:gravity="right" />
 
         <RelativeLayout
-            android:id="@+id/resistorLayout"
             android:layout_width="130dp"
             android:layout_height="100dp"
             android:layout_alignParentLeft="true"
@@ -584,8 +583,8 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="3dp"
-                android:layout_marginStart="32dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginStart="40dp"
                 android:background="@color/colorNone" />
 
             <TextView

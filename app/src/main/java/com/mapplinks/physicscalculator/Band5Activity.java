@@ -1,6 +1,5 @@
 package com.mapplinks.physicscalculator;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Spannable;
@@ -532,8 +531,7 @@ public class Band5Activity extends AppCompatActivity implements View.OnClickList
         if (id == R.id.action_settings) {
             return true;
         }else if(id==R.id.four_band){
-            Intent i = new Intent(Band5Activity.this,MainActivity.class);
-            startActivity(i);
+            this.finish();
         }
         return super.onOptionsItemSelected(item);
     }
