@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">PhysicsCalculator</string>
-    <string name="action_settings">Settings</string>
+    <string name="share">Share</string>
+    <string name="rate">Rate/Feedback</string>
     <string name="Black">0</string>
     <string name="Brown">1</string>
     <string name="Red">2</string>

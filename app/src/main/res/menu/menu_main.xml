@@ -9,8 +9,13 @@
         android:title="@string/five_band"
         />
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/share"
+        android:orderInCategory="1"
+        android:title="@string/share"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/rate"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="@string/rate"
         app:showAsAction="never" />
 </menu>

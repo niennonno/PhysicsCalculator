@@ -1,5 +1,8 @@
 package com.mapplinks.physicscalculator;
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Spannable;
@@ -11,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.mixpanel.android.mpmetrics.MixpanelAPI;
 
@@ -528,11 +532,46 @@ public class Band5Activity extends AppCompatActivity implements View.OnClickList
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.share) {
+            shareTextUrl();
+        } else if (id == R.id.rate) {
+            rateApp();
         }else if(id==R.id.four_band){
             this.finish();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void shareTextUrl() {
+        Intent share = new Intent(android.content.Intent.ACTION_SEND);
+        share.setType("text/plain");
+        share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
+
+        // Add data to the intent, the receiving app will decide
+        // what to do with it.
+        share.putExtra(Intent.EXTRA_SUBJECT, "Resistance Calculator");
+        share.putExtra(Intent.EXTRA_TEXT, "I am using Resistance Calculator via @Mapplinks. Find it here: http://mpp.link/133v");
+
+        startActivity(Intent.createChooser(share, "Spread the Word!"));
+    }
+
+    void rateApp() {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("market://details?id=com.mapplinks.physicscalculator"));
+        if (!MyStartActivity(intent)) {
+            intent.setData(Uri.parse("https://play.google.com/store/apps/details?[Id]"));
+            if (!MyStartActivity(intent)) {
+                Toast.makeText(this, "Could not open Android market, please install the market app.", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    private boolean MyStartActivity(Intent aIntent) {
+        try {
+            startActivity(aIntent);
+            return true;
+        } catch (ActivityNotFoundException e) {
+            return false;
+        }
     }
 }
