@@ -51,9 +51,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         FontChangeCrawler fontChanger = new FontChangeCrawler(getAssets(), "gotham_light.otf");
         fontChanger.replaceFonts((ViewGroup) this.findViewById(android.R.id.content));
+       getSupportActionBar().setDisplayShowCustomEnabled(true);
 
         SpannableString s = new SpannableString("Resistance Calculator");
-        s.setSpan(new TypefaceSpan("gotham_bold.otf"), 0, s.length(),
+        s.setSpan(new TypefaceSpan("gotham_light.otf"), 0, s.length(),
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         getSupportActionBar().setTitle(s);
 
