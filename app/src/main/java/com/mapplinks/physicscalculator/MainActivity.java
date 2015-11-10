@@ -396,37 +396,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    void calculate() {
-        DecimalFormat precision = new DecimalFormat("0");
-        firstBandValue.setText(precision.format(first));
-        secondBandValue.setText(precision.format(second));
-        if (suffix == "") {
-            thirdBandValue.setText("10^" + precision.format(multiplier));
-        } else if (suffix == "K") {
-            thirdBandValue.setText("10^" + precision.format(multiplier + 3));
-        } else if (suffix == "M") {
-            thirdBandValue.setText("10^" + precision.format(multiplier + 6));
-        } else if (suffix == "G") {
-            thirdBandValue.setText("10^" + precision.format(multiplier + 9));
+        void calculate() {
+            DecimalFormat precision = new DecimalFormat("0");
+            firstBandValue.setText(precision.format(first));
+            secondBandValue.setText(precision.format(second));
+            if (suffix == "") {
+                thirdBandValue.setText("10^" + precision.format(multiplier));
+            } else if (suffix == "K") {
+                thirdBandValue.setText("10^" + precision.format(multiplier + 3));
+            } else if (suffix == "M") {
+                thirdBandValue.setText("10^" + precision.format(multiplier + 6));
+            } else if (suffix == "G") {
+                thirdBandValue.setText("10^" + precision.format(multiplier + 9));
+            }
+
+            if (btnCount >= 3) {
+                value = (first * 10) + second;
+                value *= Math.pow(10, multiplier);
+                double formattedNumber = Double.parseDouble(new DecimalFormat("#.##").format(value));
+                resValue.setText(formattedNumber + " " + suffix + "Ω");
+                calculateTolerance();
+            }
         }
 
-        if (btnCount >= 3) {
-            value = (first * 10) + second;
-            value *= Math.pow(10, multiplier);
-            double formattedNumber = Double.parseDouble(new DecimalFormat("#.##").format(value));
-            resValue.setText(formattedNumber + " " + suffix + "Ω");
-            calculateTolerance();
+        void calculateTolerance() {
+            fourthBandValue.setText(tolerance + "%");
+            if (btnCount >= 3) {
+                tolVal = value * tolerance / 100;
+                double formattedNumber = Double.parseDouble(new DecimalFormat("#.##").format(tolVal));
+                tolValue.setText("±" + formattedNumber + " " + suffix + "Ω");
+            }
         }
-    }
-
-    void calculateTolerance() {
-        fourthBandValue.setText(tolerance + "%");
-        if (btnCount >= 3) {
-            tolVal = value * tolerance / 100;
-            double formattedNumber = Double.parseDouble(new DecimalFormat("#.##").format(tolVal));
-            tolValue.setText("±" + formattedNumber + " " + suffix + "Ω");
-        }
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
